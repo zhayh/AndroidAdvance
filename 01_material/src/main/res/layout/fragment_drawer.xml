@@ -4,4 +4,4 @@
           android:layout_height="match_parent"
           android:choiceMode="singleChoice"
           android:background="?android:attr/colorBackground"
-          tools:context=".NavigationDrawerFragment"/>
+          tools:context=".DrawerFragment"/>

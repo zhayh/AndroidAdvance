@@ -3,6 +3,12 @@ package cn.edu.niit.material;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.FragmentManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RemoteViews;
 
 import cn.edu.niit.material.fragment.BaseFragment;
 import cn.edu.niit.material.fragment.FragmentFactory;
@@ -34,6 +41,10 @@ public class MainActivity extends Activity implements DrawerLayout.DrawerListene
         setContentView(R.layout.activity_main);
         initDrawer();
         initActionBar();
+
+        sendNormalNotification();
+        sendFoldNotification();
+        sendHangNotification();
 
     }
 
@@ -114,5 +125,64 @@ public class MainActivity extends Activity implements DrawerLayout.DrawerListene
         BaseFragment fragment = FragmentFactory.createFragment(position);
         mCurrentFragment = fragment;
         fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+    }
+
+    private void sendNormalNotification() {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("Http://www.niit.edu.cn"));
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentIntent(pendingIntent);
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        builder.setAutoCancel(true);
+        builder.setContentTitle("普通通知");
+
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
+    }
+
+    private void sendFoldNotification() {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("Http://www.niit.edu.cn"));
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentIntent(pendingIntent);
+        builder.setSmallIcon(R.drawable.foldleft);
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        builder.setAutoCancel(true);
+        builder.setContentTitle("折叠式通知");
+
+        // 用RemoteViews创建自定义Notification视图
+        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.notification_fold);
+        Notification notification = builder.build();
+        notification.bigContentView = remoteViews;
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(1, notification);
+    }
+
+
+    private void sendHangNotification() {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("Http://www.niit.edu.cn"));
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentIntent(pendingIntent);
+        builder.setSmallIcon(R.drawable.foldleft);
+        builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher));
+        builder.setAutoCancel(true);
+        builder.setContentTitle("悬挂式通知");
+
+        // 设置点击跳转
+        Intent hangIntent = new Intent();
+        hangIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        hangIntent.setClass(this, MainActivity.class);
+
+        // 如果描述的PendingIntent已经存在，则在产生新的Intent之前会先取消当前的
+        PendingIntent hangPendingIntent = PendingIntent.getActivity(this, 0, hangIntent,
+                PendingIntent.FLAG_CANCEL_CURRENT);
+        builder.setFullScreenIntent(hangPendingIntent, true);
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(2, builder.build());
     }
 }
