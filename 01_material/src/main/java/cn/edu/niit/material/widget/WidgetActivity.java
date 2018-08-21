@@ -88,7 +88,8 @@ public class WidgetActivity extends Activity implements SwipeRefreshLayout.OnRef
         toolbar.setSubtitle(isVer ? "LinearLayoutManager Vertical" : "LinearLayoutManager Horizontal");
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(isVer ? LinearLayoutManager.VERTICAL : LinearLayoutManager.HORIZONTAL);
+        layoutManager.setOrientation(isVer ? LinearLayoutManager.VERTICAL :
+                LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(new ListAdapter(this, isVer));
 

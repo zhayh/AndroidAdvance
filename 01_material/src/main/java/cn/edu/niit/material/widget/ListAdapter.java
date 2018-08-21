@@ -13,8 +13,18 @@ import cn.edu.niit.material.R;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListHolder> {
 
-    int icons[] = {R.drawable.vector_icon_cloud, R.drawable.vector_icon_movie, R.drawable.vector_icon_laptop, R.drawable.vector_icon_loop, R.drawable.vector_icon_menu, R.drawable.vector_icon_mood, R.drawable.vector_icon_palette, R.drawable.vector_icon_search, R.drawable.vector_icon_time, R.drawable.vector_icon_work};
-    String names[] = {"Cloud", "Movie", "Laptop", "Loop", "Menu", "Mood", "Palette", "Search", "Time", "Work"};
+    int icons[] = {R.drawable.vector_icon_cloud,
+            R.drawable.vector_icon_movie,
+            R.drawable.vector_icon_laptop,
+            R.drawable.vector_icon_loop,
+            R.drawable.vector_icon_menu,
+            R.drawable.vector_icon_mood,
+            R.drawable.vector_icon_palette,
+            R.drawable.vector_icon_search,
+            R.drawable.vector_icon_time,
+            R.drawable.vector_icon_work};
+    String names[] = {"Cloud", "Movie", "Laptop", "Loop", "Menu",
+            "Mood", "Palette", "Search", "Time", "Work"};
     Context context;
     boolean flag;
 
