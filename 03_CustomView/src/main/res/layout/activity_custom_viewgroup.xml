@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".customview.CustomViewGroupActivity">
+
+    <cn.edu.niit.customview.customview.TitleBar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:title_text="自定义组合控件"
+        app:title_bg="@android:color/holo_orange_dark"
+        app:title_text_color="@android:color/holo_blue_dark"/>
+
+    <cn.edu.niit.customview.customview.InvalidTextView
+        android:id="@+id/iv_text"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/holo_green_light"
+        android:gravity="center"
+        android:text="自定义View控件"
+        android:textSize="16sp"/>
+
+    <cn.edu.niit.customview.customview.RectView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        app:rect_color="@android:color/holo_blue_bright"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <cn.edu.niit.customview.customview.HorizontalView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/lv_one"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <ListView
+                android:id="@+id/lv_two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </cn.edu.niit.customview.customview.HorizontalView>
+    </LinearLayout>
+</LinearLayout>

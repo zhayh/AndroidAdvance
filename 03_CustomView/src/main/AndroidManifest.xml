@@ -16,6 +16,8 @@
         <activity android:name=".animation.FrameAnimationActivity">
         </activity>
         <activity android:name=".animation.ValueAnimationActivity">
+        </activity>
+        <activity android:name=".customview.CustomViewGroupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
