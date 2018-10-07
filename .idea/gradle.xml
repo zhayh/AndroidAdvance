@@ -8,7 +8,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/01_material" />
+            <option value="$PROJECT_DIR$/01_Material" />
+            <option value="$PROJECT_DIR$/01_MaterialDesign" />
+            <option value="$PROJECT_DIR$/01_Permission" />
+            <option value="$PROJECT_DIR$/02_DesignSupport" />
+            <option value="$PROJECT_DIR$/03_CustomView" />
+            <option value="$PROJECT_DIR$/04_multithread" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

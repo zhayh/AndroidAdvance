@@ -22,7 +22,6 @@ public class TextInputLayoutActivity extends AppCompatActivity {
     @BindView(R.id.bt_login)
     Button btLogin;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

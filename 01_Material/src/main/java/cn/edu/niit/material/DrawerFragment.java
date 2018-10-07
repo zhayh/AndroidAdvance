@@ -14,10 +14,7 @@ import android.widget.ListView;
 public class DrawerFragment extends Fragment {
 
 	private OnDrawerItemSelectedListener mListener;
-
-
 	private ListView mDrawerListView;
-
 	private int mCurrentSelectedPosition = 0;
 
 	public DrawerFragment() {

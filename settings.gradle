@@ -1,1 +1,1 @@
-include ':01_material'
+include ':01_Material', ':01_Permission', ':02_DesignSupport', ':03_CustomView', ':04_multithread', ':01_MaterialDesign'

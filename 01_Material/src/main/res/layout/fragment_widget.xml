@@ -51,11 +51,11 @@
 
             <Button
                 android:id="@+id/bt5"
-                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="纵向瀑布流"
-                android:layout_weight="1"/>
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="纵向瀑布流"/>
 
             <Button
                 android:id="@+id/bt6"

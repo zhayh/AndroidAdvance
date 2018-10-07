@@ -19,26 +19,26 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".taransitions.TransitionsActivity"
+                android:name=".transitions.TransitionsActivity"
                 android:configChanges="orientation|keyboardHidden" >
         </activity>
 
         <activity
-                android:name=".taransitions.ExplodeActivity"
+                android:name=".transitions.ExplodeActivity"
                 android:configChanges="orientation|keyboardHidden" >
         </activity>
 
         <activity
-                android:name=".taransitions.FadeActivity"
+                android:name=".transitions.FadeActivity"
                 android:configChanges="orientation|keyboardHidden" >
         </activity>
 
         <activity
-                android:name=".taransitions.SlideActivity"
+                android:name=".transitions.SlideActivity"
                 android:configChanges="orientation|keyboardHidden" >
         </activity>
         <activity
-                android:name=".taransitions.ShareActivity"
+                android:name=".transitions.ShareActivity"
                 android:configChanges="orientation|keyboardHidden" >
         </activity>
 

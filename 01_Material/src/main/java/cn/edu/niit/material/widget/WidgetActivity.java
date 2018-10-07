@@ -44,8 +44,9 @@ public class WidgetActivity extends Activity implements SwipeRefreshLayout.OnRef
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mOrientation = getIntent().getIntExtra("orientation", NONE);
         setContentView(R.layout.widget_layout);
+
+        mOrientation = getIntent().getIntExtra("orientation", NONE);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
         refreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh);
         refreshLayout.setOnRefreshListener(this);
@@ -147,7 +148,6 @@ public class WidgetActivity extends Activity implements SwipeRefreshLayout.OnRef
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         for (int i = 0; i < menuTitles.length; i++) {
-
             if (item.getTitle().equals(menuTitles[i])) {
                 Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
                 return true;

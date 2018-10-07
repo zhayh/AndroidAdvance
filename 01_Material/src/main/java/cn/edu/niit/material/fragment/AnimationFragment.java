@@ -13,7 +13,7 @@ import android.view.animation.PathInterpolator;
 import android.widget.Button;
 
 import cn.edu.niit.material.R;
-import cn.edu.niit.material.taransitions.TransitionsActivity;
+import cn.edu.niit.material.transitions.TransitionsActivity;
 
 
 public class AnimationFragment extends BaseFragment implements View.OnClickListener {
