@@ -5,20 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".async.AsyncTaskActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:max="100"
+        android:progress="0"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/tv_message"
-        android:layout_gravity="center"
-        android:textSize="20sp"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="启动异步任务，点击空白处取消"/>
+
 
 </LinearLayout>
