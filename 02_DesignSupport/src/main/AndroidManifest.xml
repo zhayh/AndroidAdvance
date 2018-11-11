@@ -19,11 +19,11 @@
         <activity android:name=".TextInputLayoutActivity">
         </activity>
         <activity android:name=".tablayout.TabLayoutActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity
             android:name=".navigationview.NavigationActivity"
@@ -36,7 +36,11 @@
             <!--</intent-filter>-->
         </activity>
         <activity android:name=".coordinatorlayout.CoordinatorLayoutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".coordinatorlayout.CollapsingToolbarActivity">
             <!--<intent-filter>-->

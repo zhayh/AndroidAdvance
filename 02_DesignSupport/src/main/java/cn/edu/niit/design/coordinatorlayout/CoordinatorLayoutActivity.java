@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -18,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.edu.niit.design.R;
 import cn.edu.niit.design.tablayout.FragmentAdapter;
-import cn.edu.niit.design.tablayout.ListFragment;
+import cn.edu.niit.design.tablayout.MyListFragment;
 
 public class CoordinatorLayoutActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
@@ -37,7 +38,11 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
         initViewPager();
     }
 
@@ -52,11 +57,10 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
 
         for(String title : titles) {
             tabs.addTab(tabs.newTab().setText(title));
-            fragments.add(new ListFragment());
+            fragments.add(new MyListFragment());
         }
 
-        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments,
-                titles);
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
         viewpager.setAdapter(adapter);
         tabs.setupWithViewPager(viewpager);
     }

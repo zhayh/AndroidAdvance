@@ -15,17 +15,18 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="70dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:background="@mipmap/ic_launcher"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"
             android:gravity="center_vertical"
-            android:textSize="14sp"
-            android:maxLines="4"
+            android:textSize="18sp"
+            android:maxLines="2"
             android:ellipsize="end"
             android:text="我奔跑在我孤傲的路上，使然看不见终点和希望，有太多火焰冷却我的理想，我依然燃烧我仍在信仰。"/>
     </LinearLayout>

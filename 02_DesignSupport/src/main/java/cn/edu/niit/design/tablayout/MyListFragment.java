@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import cn.edu.niit.design.R;
 
-public class ListFragment extends Fragment {
+public class MyListFragment extends Fragment {
     private RecyclerView mRecyclerView;
 
     @Nullable

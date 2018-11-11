@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +52,7 @@ public class TabLayoutActivity extends AppCompatActivity {
         List<Fragment> fragments = new ArrayList<>();
         for(String title : titles) {
             tabs.addTab(tabs.newTab().setText(title));
-            fragments.add(new ListFragment());
+            fragments.add(new MyListFragment());
         }
         FragmentAdapter fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(),
                 fragments, titles);
