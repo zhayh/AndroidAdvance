@@ -19,13 +19,14 @@
         <activity android:name=".CardViewActivity">
 
         </activity>
-        <activity android:name=".ToolbarActivity"/>
-        <activity android:name=".NotificationActivity">
+        <activity android:name=".ToolbarActivity" android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".NotificationActivity">
         </activity>
     </application>
 

@@ -31,7 +31,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
         btnFold.setOnClickListener(this);
         btnHang.setOnClickListener(this);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             String channelId = "normal";
             String channelName = "普通";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
@@ -47,6 +47,13 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
             importance = NotificationManager.IMPORTANCE_HIGH;
             createNotificationChannel(channelId, channelName, importance);
         }
+    }
+
+    @TargetApi(Build.VERSION_CODES.O)
+    private void createNotificationChannel(String channelId, String channelName, int importance) {
+        NotificationChannel channel = new NotificationChannel(channelId, channelName, importance);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.createNotificationChannel(channel);
     }
 
     @Override
@@ -69,6 +76,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
         Notification notification = new NotificationCompat.Builder(this, "normal")
                 .setContentTitle("普通通知")
                 .setContentText("今天中午吃什么")
@@ -120,13 +128,7 @@ public class NotificationActivity extends AppCompatActivity implements View.OnCl
             builder.setFullScreenIntent(pendingIntent, true);
         }
         manager.notify(3, builder.build());
-
     }
 
-    @TargetApi(Build.VERSION_CODES.O)
-    private void createNotificationChannel(String channelId, String channelName, int importance) {
-        NotificationChannel channel = new NotificationChannel(channelId, channelName, importance);
-        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notificationManager.createNotificationChannel(channel);
-    }
+
 }

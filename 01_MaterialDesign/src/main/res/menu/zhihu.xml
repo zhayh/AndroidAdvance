@@ -6,7 +6,7 @@
         android:id="@+id/action_search"
         android:icon="@mipmap/ic_search"
         android:title="查找"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_notification"

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MaterialDesignDemo</string>
+    <string name="drawer_close">close</string>
+    <string name="drawer_open">open</string>
 </resources>
