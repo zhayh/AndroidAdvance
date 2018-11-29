@@ -57,9 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
         applyPermission();
 
-        initData();
-        initView();
-
         // 注册广播
         musicReceiver = new MusicBroadcastReceiver();
         IntentFilter filter = new IntentFilter();
@@ -86,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
                 if (showRequestPermission) {
                     Toast.makeText(this, "权限未申请", Toast.LENGTH_SHORT).show();
                 }
+            } else {
+                initData();
+                initView();
             }
         }
     }
