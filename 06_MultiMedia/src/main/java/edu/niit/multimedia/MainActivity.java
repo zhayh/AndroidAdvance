@@ -127,6 +127,10 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.btn_previous, R.id.btn_play, R.id.btn_next})
     public void onViewClicked(View view) {
+        if(mFiles == null || mFiles.isEmpty()) {
+            Toast.makeText(this, "没有歌曲可播放", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Intent intent = new Intent(MainActivity.this, MusicService.class);
         switch (view.getId()) {
             case R.id.btn_previous:
